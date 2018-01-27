@@ -1,5 +1,6 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signin',
@@ -19,10 +20,11 @@ export class SigninComponent implements OnInit, DoCheck {
   userEmail: string;
   userPassword: string;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
+
 
   ngDoCheck() {
     var regex = "@gmail.com";
@@ -41,24 +43,16 @@ export class SigninComponent implements OnInit, DoCheck {
             '';
   }
 
-  isConfirmedUser() {
-    if((this.userEmail === 'sonabstudios@gmail.com') ||
-       (this.userEmail === 'kcproa@gmail.com') ||
-       (this.userEmail === 'sandee.pilayre@gmail.com')) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  onClick() {
+  onSignIn() {
     this.showForm = false;
-
-    if((this.userPassword === 'userdemo') && (this.isConfirmedUser())){
-      this.showSuccess = true;
-
-    } else {
-      this.showFailure = true;
-    }
+    this.authService.signinUser(this.userEmail, this.userPassword)
+      .then( response => {
+        console.log(response);
+        this.showSuccess = true;
+      })
+      .catch( error => {
+        console.log(error);
+        this.showFailure = true;
+      });
   }
 }

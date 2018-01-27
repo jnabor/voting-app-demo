@@ -32,6 +32,8 @@ import { AppRoutingModule }     from './app-routing.module';
 import { PollsComponent } from './polls/polls.component';
 import { ResultsComponent } from './results/results.component';
 
+import { AuthService } from './auth/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +64,7 @@ import { ResultsComponent } from './results/results.component';
     MatFormFieldModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

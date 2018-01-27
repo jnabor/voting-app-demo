@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { FormControl, Validators} from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -12,10 +13,17 @@ export class SignupComponent implements OnInit {
   hide2 = true;
   formValid = false;
 
-  constructor() { }
+  userEmail: string;
+  userPassword: string;
+  userPassword2: string;
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
 
+  onSignUp() {
+    this.authService.signupUser(this.userEmail, this.userPassword)
+  }
 
 }

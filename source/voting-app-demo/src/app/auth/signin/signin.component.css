@@ -5,13 +5,7 @@
   padding: 40px;
 }
 
-.example-card-show {
-  margin: auto;
-  width: 400px;
-}
-
-.example-card-hide {
-  display: none;
+.example-card {
   margin: auto;
   width: 400px;
 }

@@ -10,6 +10,7 @@
 /node_modules
 /source/voting-app-demo/node_modules
 /source/firebase/node_modules
+source/voting-app-demo/functions/node_modules
 
 # IDEs and editors
 /.idea

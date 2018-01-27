@@ -62,7 +62,8 @@ import { AuthService } from './auth/auth.service';
     MatProgressBarModule,
     MatInputModule,
     MatFormFieldModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

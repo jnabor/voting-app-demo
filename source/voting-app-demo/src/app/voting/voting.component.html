@@ -1,0 +1,113 @@
+<mat-horizontal-stepper>
+
+  <!-- Step 1 -->
+    <mat-step>
+        <ng-template matStepLabel>Selection</ng-template>
+        <div class="item-spacer" ></div>
+        <mat-divider></mat-divider>
+        <div class="vote-item-spacer" >
+          President
+          <div class="candidate-options">
+            <mat-radio-group class="example-radio-group"  [(ngModel)]="selectedPresident">
+              <mat-radio-button class="example-radio-button" *ngFor="let candidate of ElectionVotes.candidatesPresident" [value]="candidate.candidateName">
+                {{candidate.candidateName}}
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="vote-item-spacer" >
+            VP Internal
+            <div class="candidate-options">
+              <mat-radio-group class="example-radio-group" [(ngModel)]="selectedVPI">
+                <mat-radio-button class="example-radio-button" *ngFor="let candidate of ElectionVotes.candidatesVPInternal" [value]="candidate.candidateName">
+                  {{candidate.candidateName}}
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="vote-item-spacer" >
+            VP External
+            <div class="candidate-options">
+              <mat-radio-group class="example-radio-group" [(ngModel)]="selectedVPE">
+                <mat-radio-button class="example-radio-button" *ngFor="let candidate of ElectionVotes.candidatesVPExternal" [value]="candidate.candidateName">
+                  {{candidate.candidateName}}
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="vote-item-spacer" >
+            Secretary
+            <div class="candidate-options">
+              <mat-radio-group class="example-radio-group" [(ngModel)]="selectedSecretary">
+                <mat-radio-button class="example-radio-button" *ngFor="let candidate of ElectionVotes.candidatesSecretary" [value]="candidate.candidateName">
+                  {{candidate.candidateName}}
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="vote-item-spacer" >
+            Treasurer
+            <div class="candidate-options">
+              <mat-radio-group class="example-radio-group" [(ngModel)]="selectedTreasurer">
+                <mat-radio-button class="example-radio-button" *ngFor="let candidate of ElectionVotes.candidatesTreasurer" [value]="candidate.candidateName">
+                  {{candidate.candidateName}}
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
+        </div>
+
+        <div class="item-spacer" ></div>
+            <div class="align-right">
+              <button mat-raised-button matStepperNext>Next</button>
+            </div>
+        <div class="item-spacer" ></div>
+      </mat-step>
+
+
+  <!-- Step 2 -->
+  <mat-step>
+    <ng-template matStepLabel>Review your votes</ng-template>
+    <br/>
+      <mat-divider></mat-divider>
+        <div class="vote-item-spacer" ></div>
+          President : {{ selectedPresident }}
+        <div class="vote-item-spacer" ></div>
+      <mat-divider></mat-divider>
+        <div class="vote-item-spacer" ></div>
+          VP Internal: {{ selectedVPI }}
+        <div class="vote-item-spacer" ></div>
+      <mat-divider></mat-divider>
+        <div class="vote-item-spacer" ></div>
+          VP External: {{ selectedVPE }}
+        <div class="vote-item-spacer" ></div>
+      <mat-divider></mat-divider>
+        <div class="vote-item-spacer" ></div>
+          Secretary: {{ selectedSecretary }}
+        <div class="vote-item-spacer" ></div>
+      <mat-divider></mat-divider>
+        <div class="vote-item-spacer" ></div>
+          Treasurer: {{ selectedTreasurer }}
+        <div class="vote-item-spacer" ></div>
+      <mat-divider></mat-divider>
+      <div class="vote-item-spacer" ></div>
+      <div class="item-spacer" ></div>
+      <div>
+        <div class="example-spacer"></div>
+          <button mat-button matStepperPrevious>Back</button>
+          <span class="horizontal-spacer"></span>
+          <button mat-raised-button color="primary" matStepperNext (click)="submitVote()" >Submit</button>
+          <div class="example-spacer"></div>
+      </div>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <br/>
+    Thank you for voting! You are now done.
+    <br/><br/>
+  </mat-step>
+</mat-horizontal-stepper>

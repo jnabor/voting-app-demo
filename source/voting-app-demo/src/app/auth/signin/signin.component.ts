@@ -20,28 +20,20 @@ export class SigninComponent implements OnInit, DoCheck {
   showProgress = false;
   showSuccess = false;
   showFailure = false;
-  showemailProgress = false;
   showfinishEmail = false;
 
   userEmail: string;
   userPassword: string;
   linktoUrl: string;
-  endpoint = 'https://us-central1-evoting-a0552.cloudfunctions.net/httpEmail';
 
-  constructor(private authService: AuthService, private http: Http) { }
+  constructor(private authService: AuthService) { }
 
   sendEmail() {
-    const data = {
-      toEmail: 'sonabstudios@gmail.com',
-      toName: 'Jayson Nabor'
-    }
-
-    this.http.post(this.endpoint, data).subscribe();
-
-
+    this.showfinishEmail = true;
   }
 
   ngOnInit() {
+
   }
 
   ngDoCheck() {
@@ -68,16 +60,12 @@ export class SigninComponent implements OnInit, DoCheck {
         console.log(response);
         this.showSuccess = true;
         this.showProgress = false;
-        this.showemailProgress = true;
         this.sendEmail();
-        setTimeout(() => {
-          this.showemailProgress = false;
-          this.showfinishEmail = true;
-         }, 1000);
       })
       .catch( error => {
         console.log(error);
         this.showFailure = true;
+        this.showfinishEmail = false;
         this.showProgress = false;
       });
   }

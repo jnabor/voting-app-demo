@@ -26,13 +26,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { MainwindowComponent } from './mainwindow/mainwindow.component';
 import { MainComponent } from './main/main.component';
 import { FormControl, Validators } from '@angular/forms';
 import { AppRoutingModule }     from './app-routing.module';
-import { PollsComponent } from './polls/polls.component';
+import { VotingComponent } from './voting/voting.component';
 import { ResultsComponent } from './results/results.component';
 
 import { AuthService } from './auth/auth.service';
+import { EvotingService } from './shared/evoting.service';
 
 @NgModule({
   declarations: [
@@ -40,8 +42,9 @@ import { AuthService } from './auth/auth.service';
     SigninComponent,
     SignupComponent,
     ToolbarComponent,
+    MainwindowComponent,
     MainComponent,
-    PollsComponent,
+    VotingComponent,
     ResultsComponent
   ],
   imports: [
@@ -50,13 +53,19 @@ import { AuthService } from './auth/auth.service';
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
+    HttpModule,
     MatToolbarModule,
+    BrowserAnimationsModule,
     MatMenuModule,
+    MatButtonModule,
     MatIconModule,
     MatTabsModule,
+    MatStepperModule,
+    MatFormFieldModule,
     MatTableModule,
     MatDividerModule,
     MatRadioModule,
+    FormsModule,
     MatCardModule,
     MatListModule,
     MatProgressBarModule,
@@ -65,7 +74,7 @@ import { AuthService } from './auth/auth.service';
     AppRoutingModule,
     HttpModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, EvotingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

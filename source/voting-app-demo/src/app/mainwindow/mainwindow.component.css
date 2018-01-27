@@ -1,0 +1,14 @@
+.main_window{
+  padding: 10px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.demo-tab-group {
+ border: none;
+}
+
+.demo-tab-content {
+  padding: 16px;
+}

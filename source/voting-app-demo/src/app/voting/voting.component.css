@@ -1,0 +1,36 @@
+.example-spacer {
+  padding: 20px;
+}
+
+.vote-item-spacer {
+  margin: 10px;
+}
+
+.item-spacer {
+  margin-top: 40px;
+}
+
+.example-radio-group {
+  padding-left: 20px;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.example-selected-value {
+  margin: 15px 0;
+}
+
+.candidate-options {
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.align-right{
+text-align: right;
+padding: 20px;
+}

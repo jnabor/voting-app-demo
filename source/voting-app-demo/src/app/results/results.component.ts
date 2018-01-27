@@ -1,3 +1,7 @@
+import { Vote } from '../shared/vote.model';
+import { Candidate } from '../shared/candidate.model';
+import { Election } from '../shared/election.model';
+import { EvotingService} from '../shared/evoting.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +10,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
+  ElectionVotes: Election;
 
-  constructor() { }
+  constructor(private evotingService: EvotingService) { }
 
   ngOnInit() {
+    this.ElectionVotes = this.evotingService.loadElectionCandidates();
   }
 
 }

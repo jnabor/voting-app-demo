@@ -1,3 +1,70 @@
-<p>
-  results works!
-</p>
+
+<div class="card-spacer" ></div>
+<mat-card>
+  <mat-card-content>
+      <mat-list role="list">
+        <h3 mat-subheader>President</h3>
+        <mat-list-item *ngFor="let candidate of ElectionVotes.candidatesPresident" role="listitem">
+            <mat-icon mat-list-icon>account_circle</mat-icon>
+            <h4 mat-line>{{candidate.candidateName}}</h4>
+            <p mat-line> Votes: {{candidate.candidateVotes}} <mat-progress-bar mode="determinate" value="{{candidate.candidateVotes}}"></mat-progress-bar></p>
+        </mat-list-item>
+      </mat-list>
+  </mat-card-content>
+</mat-card>
+
+<div class="card-spacer" ></div>
+<mat-card>
+  <mat-card-content>
+      <mat-list role="list">
+        <h3 mat-subheader>Vice-President Internal</h3>
+        <mat-list-item *ngFor="let candidate of ElectionVotes.candidatesVPInternal" role="listitem">
+            <mat-icon mat-list-icon>account_circle</mat-icon>
+            <h4 mat-line>{{candidate.candidateName}}</h4>
+            <p mat-line> Votes: {{candidate.candidateVotes}} <mat-progress-bar mode="determinate" value="{{candidate.candidateVotes}}"></mat-progress-bar></p>
+        </mat-list-item>
+      </mat-list>
+  </mat-card-content>
+</mat-card>
+
+<div class="card-spacer" ></div>
+<mat-card>
+  <mat-card-content>
+      <mat-list role="list">
+        <h3 mat-subheader>Vice-President External</h3>
+        <mat-list-item *ngFor="let candidate of ElectionVotes.candidatesVPExternal" role="listitem">
+            <mat-icon mat-list-icon>account_circle</mat-icon>
+            <h4 mat-line>{{candidate.candidateName}}</h4>
+            <p mat-line> Votes: {{candidate.candidateVotes}} <mat-progress-bar mode="determinate" value="{{candidate.candidateVotes}}"></mat-progress-bar></p>
+        </mat-list-item>
+      </mat-list>
+  </mat-card-content>
+</mat-card>
+
+<div class="card-spacer" ></div>
+<mat-card>
+  <mat-card-content>
+      <mat-list role="list">
+        <h3 mat-subheader>Secretary</h3>
+        <mat-list-item *ngFor="let candidate of ElectionVotes.candidatesSecretary" role="listitem">
+            <mat-icon mat-list-icon>account_circle</mat-icon>
+            <h4 mat-line>{{candidate.candidateName}}</h4>
+            <p mat-line> Votes: {{candidate.candidateVotes}} <mat-progress-bar mode="determinate" value="{{candidate.candidateVotes}}"></mat-progress-bar></p>
+        </mat-list-item>
+      </mat-list>
+  </mat-card-content>
+</mat-card>
+
+<div class="card-spacer" ></div>
+<mat-card>
+  <mat-card-content>
+      <mat-list role="list">
+        <h3 mat-subheader>Treasurer</h3>
+        <mat-list-item *ngFor="let candidate of ElectionVotes.candidatesTreasurer" role="listitem">
+            <mat-icon mat-list-icon>account_circle</mat-icon>
+            <h4 mat-line>{{candidate.candidateName}}</h4>
+            <p mat-line> Votes: {{candidate.candidateVotes}} <mat-progress-bar mode="determinate" value="{{candidate.candidateVotes}}"></mat-progress-bar></p>
+        </mat-list-item>
+      </mat-list>
+  </mat-card-content>
+</mat-card>

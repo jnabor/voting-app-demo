@@ -1,0 +1,46 @@
+
+.signin-block {
+  margin: auto;
+  width: 50%;
+  padding: 40px;
+}
+
+.example-card-show {
+  margin: auto;
+  width: 400px;
+}
+
+.example-card-hide {
+  display: none;
+  margin: auto;
+  width: 400px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+.submit-block {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.sign-link {
+  text-align: right;
+  float: right;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+

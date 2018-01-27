@@ -4,6 +4,7 @@ import { AuthService } from '../auth.service';
 import { Http, Headers, Response, URLSearchParams } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -26,10 +27,11 @@ export class SigninComponent implements OnInit, DoCheck {
   userPassword: string;
   linktoUrl: string;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   sendEmail() {
     this.showfinishEmail = true;
+    this.router.navigate(['/main']);
   }
 
   ngOnInit() {

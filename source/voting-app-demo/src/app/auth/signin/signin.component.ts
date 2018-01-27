@@ -16,6 +16,8 @@ export class SigninComponent implements OnInit, DoCheck {
   showProgress = false;
   showSuccess = false;
   showFailure = false;
+  showemailProgress = false;
+  showfinishEmail = false;
 
   userEmail: string;
   userPassword: string;
@@ -44,15 +46,19 @@ export class SigninComponent implements OnInit, DoCheck {
   }
 
   onSignIn() {
+    this.showProgress = true;
     this.showForm = false;
     this.authService.signinUser(this.userEmail, this.userPassword)
       .then( response => {
         console.log(response);
         this.showSuccess = true;
+        this.showProgress = false;
+        this.showemailProgress = true;
       })
       .catch( error => {
         console.log(error);
         this.showFailure = true;
+        this.showProgress = false;
       });
   }
 }

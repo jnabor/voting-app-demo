@@ -29,7 +29,13 @@
     <mat-card-content>
       <div class="example-container">
         <h3>Signing In Success</h3>
-        <p>An email with the link to the voting application has been sent to {{userEmail}}.</p>
+        <div [hidden]="!showemailProgress">
+          <h5>Sending voting link to {{userEmail}}</h5>
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </div>
+        <div [hidden]="!showfinishEmail">
+          <p>An email with the link to the voting application has been sent to {{userEmail}}.</p>
+        </div>
       </div>
     </mat-card-content>
   </mat-card>
@@ -43,4 +49,8 @@
       </div>
     </mat-card-content>
   </mat-card>
+</div>
+
+<div class="signin-block" [hidden]="!showProgress">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </div>

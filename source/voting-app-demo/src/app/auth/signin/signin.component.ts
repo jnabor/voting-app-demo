@@ -46,7 +46,6 @@ export class SigninComponent implements OnInit, DoCheck {
 
   ngDoCheck() {
     var regex = "@gmail.com";
-
     // only accept @gmail.com for now
     if((this.email.valid) && (this.userEmail.length >= 14) && (this.userEmail.search(regex) != -1) &&  (this.userPassword != null)) {
       this.formValid = true;

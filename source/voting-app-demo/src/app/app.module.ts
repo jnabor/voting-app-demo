@@ -29,6 +29,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MainComponent } from './main/main.component';
 import { FormControl, Validators } from '@angular/forms';
 import { AppRoutingModule }     from './app-routing.module';
+import { PollsComponent } from './polls/polls.component';
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { AppRoutingModule }     from './app-routing.module';
     SigninComponent,
     SignupComponent,
     ToolbarComponent,
-    MainComponent
+    MainComponent,
+    PollsComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

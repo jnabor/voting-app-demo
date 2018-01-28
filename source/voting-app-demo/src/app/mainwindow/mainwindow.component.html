@@ -1,22 +1,21 @@
-<ng-template [ngIf]="!authService.isAuthenticated()">
-  <div class="main_window">
-    <mat-tab-group class="demo-tab-group">
-        <mat-tab label="eVoting">
-          <div class="demo-tab-content">
-            <app-voting></app-voting>
-          </div>
-        </mat-tab>
-        <mat-tab label="Results">
-          <div class="demo-tab-content">
-            <app-results></app-results>
-          </div>
-        </mat-tab>
-        <mat-tab label="ADMIN" disabled>
-          No content
-        </mat-tab>
-      </mat-tab-group>
-</div>
-</ng-template>
+    <div class="main_window">
+        <mat-tab-group class="demo-tab-group">
+            <mat-tab label="eVoting">
+              <div class="demo-tab-content">
+                <app-voting></app-voting>
+              </div>
+            </mat-tab>
+            <mat-tab label="Results">
+              <div class="demo-tab-content">
+                <app-results></app-results>
+              </div>
+            </mat-tab>
+            <mat-tab label="ADMIN" disabled>
+              No content
+            </mat-tab>
+          </mat-tab-group>
+    </div>
+
 
 
 

@@ -27,7 +27,6 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MainwindowComponent } from './mainwindow/mainwindow.component';
-import { MainComponent } from './main/main.component';
 import { FormControl, Validators } from '@angular/forms';
 import { AppRoutingModule }     from './app-routing.module';
 import { VotingComponent } from './voting/voting.component';
@@ -36,6 +35,7 @@ import { ResultsComponent } from './results/results.component';
 import { AuthService } from './auth/auth.service';
 import { EvotingService } from './shared/evoting.service';
 import { EmailService } from "../app/shared/email.service"
+import { AuthGuardService } from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,6 @@ import { EmailService } from "../app/shared/email.service"
     SignupComponent,
     ToolbarComponent,
     MainwindowComponent,
-    MainComponent,
     VotingComponent,
     ResultsComponent
   ],
@@ -75,7 +74,7 @@ import { EmailService } from "../app/shared/email.service"
     AppRoutingModule,
     HttpModule
   ],
-  providers: [AuthService, EvotingService, EmailService],
+  providers: [AuthService, EvotingService, EmailService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

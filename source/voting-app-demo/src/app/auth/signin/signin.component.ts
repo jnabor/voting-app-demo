@@ -20,8 +20,8 @@ export class SigninComponent implements OnInit, DoCheck {
   hide = true;
   formValid = false;
   showForm = true;
-  userEmail: string = 'sonabstudios@gmail.com';
-  userPassword: string = 'userdemo123';
+  userEmail: string;
+  userPassword: string;
 
   // Login progress
   showProgress = false;
@@ -58,8 +58,14 @@ export class SigninComponent implements OnInit, DoCheck {
     this.showForm = false;
     this.showProgress = true;
     this.authService.signinUser(this.userEmail, this.userPassword);
+    this.sendMail();
     setTimeout(() => {
       this.showProgress = false;
     }, 2000);
   }
+
+  /*
+  testSend() {
+    this.emailService.sendEmail('sonabstudios@gmail.com');
+  }*/
 }

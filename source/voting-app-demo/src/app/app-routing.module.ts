@@ -5,13 +5,12 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { ResultsComponent } from './results/results.component';
 import { VotingComponent } from './voting/voting.component';
 import { MainwindowComponent } from './mainwindow/mainwindow.component';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full' },
   { path: 'signin',  component: SigninComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'voting', component: VotingComponent },
-  { path: 'results', component: ResultsComponent },
   { path: 'main', component: MainwindowComponent },
   { path: 'qwertyuiopasdfghjklzxcvbnm', component: MainwindowComponent },
 ];

@@ -1,7 +1,6 @@
 
-
-
-<div class="signin-block" [hidden]="!showForm ">
+<ng-template [ngIf]="!authService.isAuthenticated()">
+<div class="signin-block" >
 <mat-card class="example-card">
   <mat-card-header>
     <mat-card-title>Sign In</mat-card-title>
@@ -22,9 +21,15 @@
     <div class="submit-block">
       <button mat-raised-button color="primary" [disabled]="!formValid" (click)="onSignIn()">Submit</button>
     </div>
+    <div class="progress-block" [hidden]="!showProgress">
+        <ng-template [ngIf]="!authService.isAuthenticated()">
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </ng-template>
+    </div>
   </mat-card-actions>
 </mat-card>
 </div>
+</ng-template>
 
 <ng-template [ngIf]="authService.isAuthenticated()">
   <div class="signin-block">
@@ -37,10 +42,6 @@
   </div>
 </ng-template>
 
-<div class="signin-block" [hidden]="!showProgress">
-    <ng-template [ngIf]="!authService.isAuthenticated()">
-      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-    </ng-template>
-</div>
-
-<button mat-raised-button color="primary" (click)="sendMail()">Mail</button>
+<!--
+<button mat-raised-button color="primary" (click)="testSend()">Mail</button>
+-->

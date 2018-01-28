@@ -31,18 +31,11 @@ export class SigninComponent implements OnInit, DoCheck {
               private emailService: EmailService) { }
 
   ngOnInit() {
-    /*
-    this.userEmail = "sonabstudios@gmail.com";
-    this.userPassword = "userdemo123";
-    */
+
   }
 
   isAuthenticated(): boolean {
     return this.authService.isAuthenticated();
-  }
-
-  sendMail() {
-    this.emailService.sendEmail(this.userEmail);
   }
 
   ngDoCheck() {
@@ -65,7 +58,6 @@ export class SigninComponent implements OnInit, DoCheck {
     this.showForm = false;
     this.showProgress = true;
     this.authService.signinUser(this.userEmail, this.userPassword);
-    this.sendMail();
     setTimeout(() => {
       this.showProgress = false;
     }, 2000);

@@ -23,30 +23,5 @@
 </mat-card>
 </div>
 
-<div class="signin-block" [hidden]="!showSuccess">
-  <mat-card class="example-card">
-    <mat-card-content>
-      <div class="example-container">
-        <h3>Signing In Success</h3>
-        <div [hidden]="!showfinishEmail">
-          <p>An email with the link to the voting application has been sent to {{userEmail}}. (uner develpment) </p>
-        </div>
-        <a mat-button color="primary" routerLink="/main">Link to vote</a>
-      </div>
-    </mat-card-content>
-  </mat-card>
-</div>
+<button mat-raised-button color="primary" (click)="sendMail()">Send Mail</button>
 
-<div class="signin-block" [hidden]="!showFailure">
-  <mat-card class="example-card">
-    <mat-card-content>
-      <div class="example-container">
-        <h3>Signing In Failure</h3>
-      </div>
-    </mat-card-content>
-  </mat-card>
-</div>
-
-<div class="signin-block" [hidden]="!showProgress">
-    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-</div>

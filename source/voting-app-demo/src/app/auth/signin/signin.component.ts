@@ -5,6 +5,7 @@ import { Http, Headers, Response, URLSearchParams } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router } from '@angular/router';
+import { EmailService } from "../../shared/email.service"
 import * as firebase from 'firebase';
 
 @Component({
@@ -19,24 +20,20 @@ export class SigninComponent implements OnInit, DoCheck {
   hide = true;
   formValid = false;
   showForm = true;
-  showProgress = false;
-  showSuccess = false;
-  showFailure = false;
-  showfinishEmail = false;
 
   userEmail: string;
   userPassword: string;
-  linktoUrl: string;
 
-  constructor(private authService: AuthService, private router: Router) { }
-
-  sendEmail() {
-    this.showfinishEmail = true;
-    this.router.navigate(['/main']);
-  }
+  constructor(private authService: AuthService,
+              private router: Router,
+              private emailService: EmailService) { }
 
   ngOnInit() {
 
+  }
+
+  sendMail() {
+    this.emailService.sendEmail();
   }
 
   ngDoCheck() {
@@ -56,8 +53,7 @@ export class SigninComponent implements OnInit, DoCheck {
   }
 
   onSignIn() {
-    this.showProgress = true;
-    this.showForm = false;
+     this.showForm = false;
     this.authService.signinUser(this.userEmail, this.userPassword)
       .then( response => {
         console.log(response);
@@ -65,15 +61,9 @@ export class SigninComponent implements OnInit, DoCheck {
               .then(
                 (token : string) => this.authService.setToken(token)
               )
-        this.showSuccess = true;
-        this.showProgress = false;
-        this.sendEmail();
       })
       .catch( error => {
         console.log(error);
-        this.showFailure = true;
-        this.showfinishEmail = false;
-        this.showProgress = false;
       });
   }
 }

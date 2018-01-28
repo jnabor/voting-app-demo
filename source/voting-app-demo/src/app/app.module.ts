@@ -35,6 +35,7 @@ import { ResultsComponent } from './results/results.component';
 
 import { AuthService } from './auth/auth.service';
 import { EvotingService } from './shared/evoting.service';
+import { EmailService } from "../app/shared/email.service"
 
 @NgModule({
   declarations: [
@@ -74,7 +75,7 @@ import { EvotingService } from './shared/evoting.service';
     AppRoutingModule,
     HttpModule
   ],
-  providers: [AuthService, EvotingService],
+  providers: [AuthService, EvotingService, EmailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -20,9 +20,11 @@ export class SigninComponent implements OnInit, DoCheck {
   hide = true;
   formValid = false;
   showForm = true;
+  userEmail: string = 'sonabstudios@gmail.com';
+  userPassword: string = 'userdemo123';
 
-  userEmail: string;
-  userPassword: string;
+  // Login progress
+  showProgress = false;
 
   constructor(private authService: AuthService,
               private router: Router,
@@ -53,17 +55,11 @@ export class SigninComponent implements OnInit, DoCheck {
   }
 
   onSignIn() {
-     this.showForm = false;
-    this.authService.signinUser(this.userEmail, this.userPassword)
-      .then( response => {
-        console.log(response);
-        firebase.auth().currentUser.getToken()
-              .then(
-                (token : string) => this.authService.setToken(token)
-              )
-      })
-      .catch( error => {
-        console.log(error);
-      });
+    this.showForm = false;
+    this.showProgress = true;
+    this.authService.signinUser(this.userEmail, this.userPassword);
+    setTimeout(() => {
+      this.showProgress = false;
+    }, 2000);
   }
 }

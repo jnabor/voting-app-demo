@@ -1,3 +1,6 @@
+
+
+
 <div class="signin-block" [hidden]="!showForm ">
 <mat-card class="example-card">
   <mat-card-header>
@@ -23,5 +26,21 @@
 </mat-card>
 </div>
 
-<button mat-raised-button color="primary" (click)="sendMail()">Send Mail</button>
+<ng-template [ngIf]="authService.isAuthenticated()">
+  <div class="signin-block">
+    <mat-card class="example-card">
+      <mat-card-content>
+        You have signed in.
+         An email containing the link to vote was sent to your email adress {{userEmail}}.
+      </mat-card-content>
+    </mat-card>
+  </div>
+</ng-template>
 
+<div class="signin-block" [hidden]="!showProgress">
+    <ng-template [ngIf]="!authService.isAuthenticated()">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </ng-template>
+</div>
+
+<button mat-raised-button color="primary" (click)="sendMail()">Mail</button>

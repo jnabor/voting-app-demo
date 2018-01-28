@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'voting', component: VotingComponent },
   { path: 'results', component: ResultsComponent },
   { path: 'main', component: MainwindowComponent },
+  { path: 'qwertyuiopasdfghjklzxcvbnm', component: MainwindowComponent },
 ];
 
 @NgModule({

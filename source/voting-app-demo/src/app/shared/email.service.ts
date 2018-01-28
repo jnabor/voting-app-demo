@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import * as emailjs from '../../assets/email.min'
+declare var emailjs: any;
 
 @Injectable()
 export class EmailService {
 
 
-  sendEmail(){
+  sendEmail(userEmail: string){
     console.log("Sending email...");
 
     var service_id = 'sendgrid';

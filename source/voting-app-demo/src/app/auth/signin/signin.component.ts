@@ -33,7 +33,7 @@ export class SigninComponent implements OnInit, DoCheck {
   }
 
   sendMail() {
-    this.emailService.sendEmail();
+    this.emailService.sendEmail(this.userEmail);
   }
 
   ngDoCheck() {

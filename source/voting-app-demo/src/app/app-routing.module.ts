@@ -11,6 +11,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full' },
   { path: 'signin',  component: SigninComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'voting', component: VotingComponent },
+  { path: 'results', component: ResultsComponent },
   { path: 'main', component: MainwindowComponent },
   { path: 'qwertyuiopasdfghjklzxcvbnm', component: MainwindowComponent },
 ];

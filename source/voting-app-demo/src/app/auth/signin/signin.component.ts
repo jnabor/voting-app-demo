@@ -31,7 +31,10 @@ export class SigninComponent implements OnInit, DoCheck {
               private emailService: EmailService) { }
 
   ngOnInit() {
-
+    /*
+    this.userEmail = "sonabstudios@gmail.com";
+    this.userPassword = "userdemo123";
+    */
   }
 
   isAuthenticated(): boolean {

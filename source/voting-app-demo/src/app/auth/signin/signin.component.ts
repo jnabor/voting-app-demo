@@ -5,6 +5,7 @@ import { Http, Headers, Response, URLSearchParams } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router } from '@angular/router';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-signin',
@@ -60,6 +61,10 @@ export class SigninComponent implements OnInit, DoCheck {
     this.authService.signinUser(this.userEmail, this.userPassword)
       .then( response => {
         console.log(response);
+        firebase.auth().currentUser.getToken()
+              .then(
+                (token : string) => this.authService.setToken(token)
+              )
         this.showSuccess = true;
         this.showProgress = false;
         this.sendEmail();

@@ -2,6 +2,15 @@
   Demo
   <span class="tb-spacer"></span>
 
+  <ng-template [ngIf]="!authService.isAuthenticated()">
+    <div class="sign-link"><a mat-button routerLink="/signup">Register</a></div>
+    <div class="sign-link"><a mat-button routerLink="/signin">Sign In</a></div>
+  </ng-template>
+
+  <ng-template [ngIf]="authService.isAuthenticated()">
+      <button mat-button>Sign Out</button>
+  </ng-template>
+
   <!--
   <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_vert</mat-icon>
@@ -22,5 +31,6 @@
       </button>
     </mat-menu>
   -->
+
 
 </mat-toolbar>

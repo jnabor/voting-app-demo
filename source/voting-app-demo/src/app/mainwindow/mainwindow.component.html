@@ -1,4 +1,5 @@
-<div class="main_window">
+<ng-template [ngIf]="!authService.isAuthenticated()">
+  <div class="main_window">
     <mat-tab-group class="demo-tab-group">
         <mat-tab label="eVoting">
           <div class="demo-tab-content">
@@ -15,6 +16,8 @@
         </mat-tab>
       </mat-tab-group>
 </div>
+</ng-template>
+
 
 
 

@@ -34,6 +34,10 @@ export class SigninComponent implements OnInit, DoCheck {
 
   }
 
+  isAuthenticated(): boolean {
+    return this.authService.isAuthenticated();
+  }
+
   sendMail() {
     this.emailService.sendEmail(this.userEmail);
   }

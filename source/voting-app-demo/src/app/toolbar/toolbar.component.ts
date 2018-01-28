@@ -15,6 +15,10 @@ export class ToolbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  isAuthenticated(): boolean {
+    return this.authService.isAuthenticated();
+  }
+
   onLogout() {
     this.authService.logout();
   }

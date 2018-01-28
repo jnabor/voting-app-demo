@@ -2,12 +2,12 @@
   Demo
   <span class="tb-spacer"></span>
 
-  <ng-template [ngIf]="!authService.isAuthenticated()">
+  <ng-template [ngIf]="!isAuthenticated()">
     <div class="sign-link"><a mat-button routerLink="/signup">Register</a></div>
     <div class="sign-link"><a mat-button routerLink="/signin">Sign In</a></div>
   </ng-template>
 
-  <ng-template [ngIf]="authService.isAuthenticated()">
+  <ng-template [ngIf]="isAuthenticated()">
       <!-- <div class="sign-link"><a mat-button routerLink="/main">Voting</a></div> -->
       <button mat-button (click)="onLogout()">Sign Out</button>
   </ng-template>

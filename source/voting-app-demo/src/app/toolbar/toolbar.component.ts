@@ -9,21 +9,11 @@ import { Router } from '@angular/router';
 })
 export class ToolbarComponent implements OnInit {
 
-  public location = '' ;
-  show = true;
-
   constructor(private authService: AuthService,
               private router: Router ) {
-    this.location = router.url;
   }
 
-  ngOnInit() {
-    if(this.location == '/signin') {
-      this.show = true;
-    } else {
-      //this.show = false;
-    }
-  }
+  ngOnInit() { }
 
   isAuthenticated(): boolean {
     return this.authService.isAuthenticated();

@@ -2,7 +2,7 @@
   Demo
   <span class="tb-spacer"></span>
 
-  <ng-template [ngIf]="(!isAuthenticated())">
+  <ng-template [ngIf]="!isAuthenticated()">
     <div *ngIf="router.url != '/main' && router.url != '/qwertyuiopasdfghjklzxcvbnm'">
       <div class="sign-link"><a mat-button routerLink="/signup">Register</a></div>
       <div class="sign-link"><a mat-button routerLink="/signin">Sign In</a></div>
@@ -10,10 +10,8 @@
   </ng-template>
 
   <ng-template [ngIf]="isAuthenticated()">
-    <div *ngIf="router.url != '/signin'">
       <!-- <div class="sign-link"><a mat-button routerLink="/main">Voting</a></div> -->
       <button mat-button (click)="onLogout()">Sign Out</button>
-    </div>
   </ng-template>
 
 </mat-toolbar>
